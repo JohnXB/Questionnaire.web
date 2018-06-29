@@ -1,0 +1,45 @@
+* {
+    background-repeat: no-repeat;
+}
+body {
+    color: #333;
+    font-family: 'PingFang SC', tahoma, arial, 'helvetica neue', 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 1.5;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+div {
+    display: block;
+}
+.bx-viewport{
+    max-width: 100%;
+    display: block;
+    background-size: cover;
+    position: relative;
+    height: 510px;
+    margin: 0 auto 60px;
+    background-image: url(../images/index_sliders_bg.jpg);
+    text-align: center;
+}
+.bx-viewport h3 {
+    margin-top: -3px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: normal;
+}
+.bx-viewport h2 {
+    color: #fff;
+    padding-top: 110px;
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.slider{
+    position: relative;
+}

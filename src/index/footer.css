@@ -1,0 +1,136 @@
+
+* {
+    background-repeat: no-repeat;
+}
+body {
+    color: #333;
+    font-family: 'PingFang SC', tahoma, arial, 'helvetica neue', 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 1.5;
+}
+div {
+    display: block;
+}
+
+p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.g_footer {
+    background-color: #f5f5f5;
+    padding: 38px 0 20px;
+}
+
+.wrapper {
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.description, .contact_us,.wx_qrcode {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.description .key_words {
+    font-size: 20px;
+    color: #58a6e7;
+}
+
+.description .key_word.simple {
+    background-image: url(../images/icon_simple.png);
+}
+
+.description .key_word.easy {
+    background-image: url('../images/icon_easy.png');
+}
+
+.description .key_word.free {
+    background-image: url('../images/icon_free.png');
+}
+
+.description .key_word {
+    line-height: 24px;
+    display: inline-block;
+    padding: 15px 0 15px 60px;
+    margin-right: 20px;
+}
+
+.description .slogan {
+    margin-top: 22px;
+    color: #999;
+    font-size: 22px;
+}
+
+.contact_us {
+    width: 230px;
+    margin-top: -6px;
+    margin-left: 127px;
+    margin-right: 92px;
+}
+
+.contact_us iframe {
+    vertical-align: top;
+}
+
+.contact_us .bold {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.contact_us .bold a {
+    font-size: 16px;
+    color: #58a6e7;
+    margin-left: 5px;
+}
+
+.contact_us .contacts {
+    font-size: 13px;
+    line-height: 190%;
+    color: #999;
+}
+
+.wx_qrcode {
+    text-align: center;
+    width: 130px;
+    margin-top: -8px;
+}
+
+.wx_qrcode .qrcode {
+    margin-top: -5px;
+    width: 100px;
+    height: 100px;
+}
+
+.wx_qrcode .bold {
+    color: #999;
+    font-size: 13px;
+}
+
+.q_footer {
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    zoom: 1;
+}
+.q_footer p {
+    color: #c5c5c5;
+    font-size: 14px;
+}
+.q_footer a {
+    color: #c5c5c5;
+    font-size: 14px;
+}
+.q_footer a:hover {
+    color: #58a6e7;
+}
+.q_footer p:first-child {
+    margin-top: 20px;
+}
+.q_footer .link {
+    color: #c5c5c5;
+}
