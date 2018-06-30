@@ -35,7 +35,7 @@ export default class Service {
         //... spread操作符,这种写法为es6的语法,查阅相关文档（其实简单来说就是传递不定个数的参数）
         static SignIn = ( data,params = {}) => Service.businessService.post("/User/SignIn",data,params);
         static GetClassfication = (data, options = {}) => Service.businessService.get("/Questionnaire/A01?id=2");
-        static Edit = (id, data, options = {}) => Service.businessService.put(`/articles/${id}`, data, options);
+        static SignUp = ( data,params = {}) => Service.businessService.post("/User/SignUp", data, params);
         static Delete = (id, params, options = {}) => Service.businessService.delete(`/articles/${id}`, {
             ...options,
             params: params

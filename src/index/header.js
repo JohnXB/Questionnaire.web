@@ -5,7 +5,7 @@ import logo from '../images/logo.png'
 import avater from '../images/index_sliders_bg.jpg'
 import {connect} from 'react-redux'
 import {Modal, Button, Input, message} from 'antd';
-import { BrowserRouter as Router, Link} from "react-router-dom";
+import {  Link} from "react-router-dom";
 class Header extends Component {
     constructor(props) {
         super()
@@ -34,6 +34,7 @@ class Header extends Component {
             username: this.state.username,
             password: this.state.password
         };
+        console.log(data)
         services.Questionnaire.SignIn(data).then(ret => {
             let data = ret.data
             if (data.data.login === true) {

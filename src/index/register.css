@@ -1,0 +1,64 @@
+.register{
+    padding-top: 110px;
+}
+.active {
+    margin:0 auto;
+    padding: 0 13px 0 0;
+    width: 1000px;
+    height: 37px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    font-size: 34px;
+    color: #707070;
+    font-weight: 100;
+}
+.active:hover{
+    color: #000;
+}
+ .form_list {
+     margin:0 auto;
+     width: 500px;
+     padding-top: 40px;
+     padding-bottom: 40px;
+}
+.form_list li{
+    margin: 0 auto;
+    list-style-type:none;
+
+}
+ .form_list li input {
+     margin: 0 auto;
+    display: inline-block;
+    width: 70%;
+    height: 38px;
+    line-height: 30px;
+    color: #616161;
+    font-size: 14px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    text-indent: 5px;
+     margin-bottom: 15px;
+}
+ .input_label {
+     width: 13%;
+    display: inline-block;
+    color: #616161;
+    margin: 12px 15px 6px 0;
+    font-size: 14px;
+
+}
+ .bt_css {
+    display: block;
+     margin: auto;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    background: #006ff2;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
