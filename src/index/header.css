@@ -86,6 +86,7 @@ div {
     -moz-box-sizing: border-box;
     color: #222222;
     box-sizing: border-box;
+    text-decoration : none
 
 }
 
@@ -96,7 +97,8 @@ div {
 
 /* 鼠标移动到链接上 */
 .menu ul li a:active {
-    color: #0000FF
+    color: #2f8cdb;
+    border-bottom: 2px solid #479de6;
 }
 
 .account {

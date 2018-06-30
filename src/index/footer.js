@@ -18,10 +18,10 @@ class Footer extends Component {
                         </div>
                         <div className="contact_us">
                             <p className="bold">任何建议和问题随时<a target="_blank"
-                                                            href="https://support.qq.com/products/1221">吐个槽</a></p>
+                                                            href="">吐个槽</a></p>
                             <p className="contacts">
-                                官方邮箱：<a target="_blank" href="mailto:wj@tencent.com">408106378@qq.com</a>
-                                <br/>官方QQ：<a target="_blank" alt="腾讯问卷反馈群" title="腾讯问卷反馈群">408106378</a>
+                                官方邮箱：<a  href="">408106378@qq.com</a>
+                                <br/>官方QQ：<a >408106378</a>
 
                             </p>
                         </div>

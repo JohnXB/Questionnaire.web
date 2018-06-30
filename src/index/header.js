@@ -3,8 +3,9 @@ import './header.css'
 import services from "../lib/services"
 import logo from '../images/logo.png'
 import avater from '../images/index_sliders_bg.jpg'
-import {Modal, Button, Input,message} from 'antd';
-
+import {connect} from 'react-redux'
+import {Modal, Button, Input, message} from 'antd';
+import { BrowserRouter as Router, Link} from "react-router-dom";
 class Header extends Component {
     constructor(props) {
         super()
@@ -12,7 +13,9 @@ class Header extends Component {
             username: "",
             password: "",
             head: "../images/logo.png",
-            visible: false
+            visible: false,
+            login: "none",
+            not_login: "block"
         }
     }
 
@@ -32,63 +35,80 @@ class Header extends Component {
             password: this.state.password
         };
         services.Questionnaire.SignIn(data).then(ret => {
-
-            if(ret.data.data.login === true){
+            let data = ret.data
+            if (data.data.login === true) {
                 message.info('登录成功');
+
+
                 this.setState({
-                    password : ""
+                    password: "",
+                    login: "block",
+                    not_login: "none"
                 })
-                this.handleCancel()
+                this.handleCancel();
+                this.props.addToken(data.data.currentToken)
+
             }
-           else message.error("用户名或密码错误");
+            else message.error("用户名或密码错误");
 
 
         }).catch(ret => {
-            console.log(ret.data)
+            console.log(ret)
+        })
+    }
+    handleLogout = () => {
+        this.props.addToken("")
+        this.setState({
+            password: "",
+            not_login: "block",
+            login: "none"
         })
     }
     setUserName = (e) => {
         this.setState({
-                username : e.target.value
+                username: e.target.value
             }
         )
 
     }
     setPassword = (e) => {
         this.setState({
-                password : e.target.value
+                password: e.target.value
             }
         )
 
     }
+
+
     render() {
         return (
             <div id="header">
                 <div className="wrapper">
                     <h1 className="logo">
-                        <a href="">
+                        <Link to="/">
                             <img src={logo}/>东篱
-                        </a>
+                        </Link>
                     </h1>
                     <div className="menu">
                         <ul>
-                            <li><a href="">首页</a></li>
-                            <li><a href="">发现问卷 </a></li>
-                            <li><a href="" className="require_login">创建问卷</a></li>
-                            <li><a href="" className="require_login">我的问卷</a></li>
+                            <li><Link to="/">首页</Link></li>
+                            <li><Link to="/">发现问卷 </Link ></li>
+                            <li><Link to="/" className="require_login">创建问卷</Link></li>
+                            <li><Link to="/" className="require_login">我的问卷</Link></li>
                         </ul>
                     </div>
                     <div className="account">
-                        <div id="login_checked" className="logged_in">
-                            <img className="avatar" src={avater} />&nbsp;
+                        <div id="login_checked" className="logged_in" style={{display: this.state.login}}>
+                            <img className="avatar" src={avater}/>&nbsp;
                             <span className="name">{this.state.username}</span>
                             <span className="splitor">&nbsp;|&nbsp;</span>
-                            <a href="javascript:;" id="logout" className="logout">退出</a>
+                            <a id="logout" className="logout" onClick={this.handleLogout}>退出</a>
                         </div>
-                        <div id="login_checking" className="not_logged_in" style={{display: "block"}}>
+                        <div id="login_checking" className="not_logged_in" style={{display: this.state.not_login}}>
                             <a id="login" onClick={this.showModal} className="btn btn_green btn_small">登录</a>&nbsp;
-                            <a id="login" href="" className="btn btn_white btn_small">注册</a>
+                            <Link to='/register' className="btn btn_white btn_small">注册</Link>
                         </div>
+
                         <Modal
                             title="登录"
                             visible={this.state.visible}
@@ -100,18 +120,43 @@ class Header extends Component {
                                 </Button>,
                             ]}
                         >
-                            <div style={{marginBottom:"20px"}}>
-                                <span>用户名:</span>  <Input placeholder="请输入用户名"onChange={this.setUserName} className="username"style={{width:"80%"}}/>
+                            <div style={{marginBottom: "20px"}}>
+                                <span>用户名:</span> <Input placeholder="请输入用户名" onChange={this.setUserName}
+                                                         className="username" style={{width: "80%"}}/>
                             </div>
                             <div>
-                                <span >密&nbsp;&nbsp;&nbsp;&nbsp;码:</span> <Input placeholder="请输入密码" onChange={this.setPassword} type="password" className="password" style={{width:"80%"}}/>
+                                <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span> <Input placeholder="请输入密码"
+                                                                                onChange={this.setPassword}
+                                                                                type="password" className="password"
+                                                                                style={{width: "80%"}}/>
                             </div>
                         </Modal>
                     </div>
                 </div>
             </div>
         );
-    };
+    }
+    ;
 }
 
-export default Header;
+function mapStateToProps(state) {
+
+    return ({
+        token: state.user.token
+    })
+}
+
+function mapDispatchToProps(dispatch, token) {
+    return {
+        addToken: (token) => {
+            dispatch({
+                type: 'ADD_TOKEN',
+                token: token
+
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
+
