@@ -87,20 +87,20 @@ class Header extends Component {
                 <div className="wrapper">
                     <h1 className="logo">
                         <Link to="/">
-                            <img src={logo}/>东篱
+                            <img alt="" src={logo}/>东篱
                         </Link>
                     </h1>
                     <div className="menu">
                         <ul>
                             <li><Link to="/">首页</Link></li>
-                            <li><Link to="/">发现问卷 </Link ></li>
+                            <li><Link to="/questionnaires">发现问卷 </Link ></li>
                             <li><Link to="/" className="require_login">创建问卷</Link></li>
                             <li><Link to="/" className="require_login">我的问卷</Link></li>
                         </ul>
                     </div>
                     <div className="account">
                         <div id="login_checked" className="logged_in" style={{display: this.state.login}}>
-                            <img className="avatar" src={avater}/>&nbsp;
+                            <img  alt="" className="avatar" src={avater}/>&nbsp;
                             <span className="name">{this.state.username}</span>
                             <span className="splitor">&nbsp;|&nbsp;</span>
                             <a id="logout" className="logout" onClick={this.handleLogout}>退出</a>
@@ -147,7 +147,7 @@ function mapStateToProps(state) {
     })
 }
 
-function mapDispatchToProps(dispatch, token) {
+function mapDispatchToProps(dispatch) {
     return {
         addToken: (token) => {
             dispatch({

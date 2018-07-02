@@ -26,7 +26,7 @@ class Footer extends Component {
                             </p>
                         </div>
                         <div className="wx_qrcode">
-                            <img src={qr_code}/>
+                            <img src={qr_code} alt=""/>
                             <p className="bold">扫描关注微信公众号</p>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ class Footer extends Component {
                         <a  className="link" target="_blank" title="关于我们">关于我们</a>&nbsp;
                         <a  className="link" target="_blank" title="关于我们">免责声明</a>&nbsp;
                         <a target="_blank" >问题反馈</a>&nbsp;
-                        <a  target="_blank" title="腾讯网">腾讯网</a>&nbsp;
+                        <a  target="_blank" title="东篱网">东篱网</a>&nbsp;
                         <a  className="link" target="_blank" title="服务协议">服务协议</a>&nbsp;
                         <a  className="link" target="_blank" title="隐私政策">隐私政策</a>
                     </p>
