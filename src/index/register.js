@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import "./register.css"
-import { message} from 'antd';
+import { Radio,message} from 'antd';
 import services from "../lib/services"
+
+const RadioGroup = Radio.Group;
 class Register extends Component {
     constructor(props) {
         super()
@@ -20,6 +22,10 @@ class Register extends Component {
     handleSignUp = () => {
         if(!this.state.checkPass){
             message.error("请保持2次密码一致");
+            return
+        }
+        if(this.state.username===""||this.state.name === ""||this.state.email===""||this.state.gender===""||this.state.phone===""||this.state.password===""){
+            message.error("请输入完整用户信息！")
             return
         }
         const data = {
@@ -114,7 +120,10 @@ class Register extends Component {
                             </li>
                             <li>
                                 <label className="input_label">性别:</label>
-                                <input type="text" name="gender" onChange={this.setGender}/>
+                                <RadioGroup onChange={this.setGender} defaultValue="男">
+                                    <Radio value="男">男</Radio>
+                                    <Radio value="女">女</Radio>
+                                </RadioGroup>
                             </li>
                             <li>
                                 <label className="input_label">密码:</label>

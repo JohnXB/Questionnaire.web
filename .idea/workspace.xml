@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b57c138-f016-46ce-8a4d-cade5f806595" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/header.js" afterPath="$PROJECT_DIR$/src/index/header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/services.js" afterPath="$PROJECT_DIR$/src/lib/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/questionnaire/create.js" afterPath="$PROJECT_DIR$/src/questionnaire/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/questionnaire/show.css" afterPath="$PROJECT_DIR$/src/questionnaire/show.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/questionnaire/show.js" afterPath="$PROJECT_DIR$/src/questionnaire/show.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index/register.js" afterPath="$PROJECT_DIR$/src/index/register.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/questionnaire/show.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-38">
@@ -75,6 +70,18 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#3182#4984#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index/register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="122" column="82" lean-forward="false" selection-start-line="122" selection-start-column="82" selection-end-line="122" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/index/home.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/index/register.css" />
-        <option value="$PROJECT_DIR$/src/index/register.js" />
         <option value="$PROJECT_DIR$/src/lib/reducer.js" />
         <option value="$PROJECT_DIR$/src/index/footer.js" />
         <option value="$PROJECT_DIR$/src/index/header.css" />
@@ -174,6 +180,7 @@
         <option value="$PROJECT_DIR$/src/lib/services.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/questionnaire/show.js" />
+        <option value="$PROJECT_DIR$/src/index/register.js" />
       </list>
     </option>
   </component>
@@ -230,6 +237,12 @@
               <item name="questionnaire.web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="questionnaire.web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="questionnaire.web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="questionnaire.web" type="b2602c69:ProjectViewProjectNode" />
@@ -308,7 +321,7 @@
       <workItem from="1530327166235" duration="14254000" />
       <workItem from="1530370885979" duration="7638000" />
       <workItem from="1530500696597" duration="39031000" />
-      <workItem from="1530629605588" duration="17031000" />
+      <workItem from="1530629605588" duration="18524000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1530083643776</created>
@@ -352,11 +365,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530678063151</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完成除我的问卷外的接口对接">
+      <created>1530691136374</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530691136374</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134138000" />
+    <option name="totallyTimeSpent" value="135631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -394,7 +414,8 @@
     <MESSAGE value="完成注册" />
     <MESSAGE value="完成问卷展示" />
     <MESSAGE value="完成创建问卷" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成创建问卷" />
+    <MESSAGE value="完成除我的问卷外的接口对接" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成除我的问卷外的接口对接" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -582,16 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index/register.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1196">
@@ -659,7 +670,7 @@
         <state relative-caret-position="8">
           <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -742,6 +753,16 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#3182#4984#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="122" column="82" lean-forward="false" selection-start-line="122" selection-start-column="82" selection-end-line="122" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
