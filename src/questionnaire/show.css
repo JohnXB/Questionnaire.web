@@ -20,7 +20,11 @@ hr {
     text-align: center;
     margin: auto;
     margin-left: 120px;
-    margin-bottom: 100px;
+
+}
+.description{
+    margin-bottom: 50px;
+    font-size: 16px;
 }
 .layui-elem-quote {
     margin-bottom: 10px;
@@ -39,3 +43,5 @@ hr {
     font-size: 17px;
     margin-bottom: 15px;
 }
+
+

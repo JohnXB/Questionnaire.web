@@ -43,7 +43,7 @@ ReactDOM.render(
                             <Route exact path='/' component={Home}/>
                             <Route path='/register' component={Register}/>
                             <Route exact path='/questionnaires' component={QuestionnaireList}/>
-                            <Route path='/questionnaires/show' component={Questionnaire}/>
+                            <Route path='/questionnaires/show' render={() => <Questionnaire {...props} />}/>
                             <Route path='/create' render={() => <Create {...props} />}/>
                             <Route path='/myQuestionnaires' render={() => <MyQues {...props} />}/>
                         </Switch>

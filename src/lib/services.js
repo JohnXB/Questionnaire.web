@@ -40,10 +40,7 @@ export default class Service {
         static GetQuestionnaire = (data, options = {}) => Service.businessService.get(`/Questionnaire/A01?id=${data}`);
         static GetQuestionnaireById = (data, options = {}) => Service.businessService.get(`/Questionnaire/A03?id=${data}`);
         static Create = ( data,params = {}) => Service.businessService.post("/Questionnaire/A02", data, params);
-        static Delete = (id, params, options = {}) => Service.businessService.delete(`/articles/${id}`, {
-            ...options,
-            params: params
-        });
+        static FillIn = (data, params = {}) => Service.businessService.post("/Questionnaire/A07", data, params)
         static Get = (id, params, options = {}) => Service.businessService.get(`/articles/${id}`, {
             ...options,
             params: params

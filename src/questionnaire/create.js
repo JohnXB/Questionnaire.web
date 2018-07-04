@@ -126,7 +126,7 @@ class Create extends Component {
     }
     createQuestionnaire = (e) => {
         const data = {
-            classfication_id: this.state.classification_id,
+            classificationId: this.state.classification_id,
             description: this.state.description,
             title: this.state.title,
             questions: this.state.questions,

@@ -33,7 +33,6 @@ class Header extends Component {
 
     componentDidMount() {
         let token = document.cookie.split("=")[1];
-        console.log(token)
         if (token !== undefined) {
             const data={
                 token:token
@@ -49,10 +48,12 @@ class Header extends Component {
                 }
                    else{
                     message.error("用户身份已过期，请重新登录")
+                    var exp = new Date();
+                    exp.setTime(exp.getTime() - 1);
+                    document.cookie= "token" + "="+token+";expires="+exp.toGMTString();
                     this.props.history.push('/')
                 }
 
-                console.log(ret.data)
             }).catch(ret => {
                 console.log(ret)
             })
