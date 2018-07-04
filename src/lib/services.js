@@ -34,9 +34,12 @@ export default class Service {
     static Questionnaire = class {
         //... spread操作符,这种写法为es6的语法,查阅相关文档（其实简单来说就是传递不定个数的参数）
         static SignIn = ( data,params = {}) => Service.businessService.post("/User/SignIn",data,params);
+        static GetUser = ( data,params = {}) => Service.businessService.post("/User/GetUser",data,params);
+        static SignUp = ( data,params = {}) => Service.businessService.post("/User/SignUp", data, params);
         static GetClassfications = (data, options = {}) => Service.businessService.get("/Classification/A01");
         static GetQuestionnaire = (data, options = {}) => Service.businessService.get(`/Questionnaire/A01?id=${data}`);
-        static SignUp = ( data,params = {}) => Service.businessService.post("/User/SignUp", data, params);
+        static GetQuestionnaireById = (data, options = {}) => Service.businessService.get(`/Questionnaire/A03?id=${data}`);
+        static Create = ( data,params = {}) => Service.businessService.post("/Questionnaire/A02", data, params);
         static Delete = (id, params, options = {}) => Service.businessService.delete(`/articles/${id}`, {
             ...options,
             params: params

@@ -14,17 +14,12 @@
     vertical-align: top
 }
 
-.classification:hover {
-    border: 1px solid #1890ff;
-    color: #1890ff;
-}
+
 
 .classification {
     margin-bottom: 10px;
     width: 100px;
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #999999;
+
     padding: 0 20px;
     border-radius: 4px;
     font-size: 14px;

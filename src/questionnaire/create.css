@@ -1,0 +1,83 @@
+.show_content {
+    padding: 110px;
+    margin: auto;
+    min-height: 500px;
+    width: 60%;
+}
+.layui-elem-quote {
+    margin-bottom: 10px;
+    padding: 15px;
+    line-height: 22px;
+    border-left: 5px solid #009688;
+    border-radius: 0 2px 2px 0;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+
+.iLabel {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.layui-form-label {
+    display: inline-block;
+    width: 20%;
+    font-weight: 400;
+    height: 38px;
+}
+
+.layui-input-block{
+    display: inline-block;
+    width: 80%;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 38px;
+    line-height: 36px \9;
+    border-radius: 2px;
+}
+legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.ques {
+    padding: 20px;
+    border: 1px solid;
+    margin-bottom: 5px;
+}
+.quesNum{
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+}
+.iQuestion {
+    display: inline-block;
+}
+.layui-form-item {
+    margin-bottom: 15px;
+    clear: both;
+}
+.quesInput{
+    display: inline-block;
+}
+.optionInput{
+    display: inline-block;
+}
+.optionNum{
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+}
+.option{
+    margin-bottom: 15px;
+}

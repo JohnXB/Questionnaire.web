@@ -1,0 +1,41 @@
+hr {
+    height: 1px;
+    margin: 10px 0;
+    border: 0;
+    background-color: #e2e2e2;
+    clear: both;
+}
+.show_content {
+    padding: 110px;
+    margin: auto;
+    min-height: 500px;
+    width: 60%;
+}
+.title {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+}
+#subtitle {
+    text-align: center;
+    margin: auto;
+    margin-left: 120px;
+    margin-bottom: 100px;
+}
+.layui-elem-quote {
+    margin-bottom: 10px;
+    padding: 15px;
+    line-height: 22px;
+    border-left: 5px solid #009688;
+    border-radius: 0 2px 2px 0;
+    background-color: #f2f2f2;
+    font-size: 15px;
+}
+.layui-form-item {
+    margin-bottom: 15px;
+    clear: both;
+}
+.questionName {
+    font-size: 17px;
+    margin-bottom: 15px;
+}

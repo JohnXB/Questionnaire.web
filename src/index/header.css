@@ -115,12 +115,21 @@ div {
     display: none;
 }
  .account .logged_in .avatar {
-     margin-top: 17px;
-     width: 25px;
-     height: 25px;
+     width: 40px;
+     height: 40px;
      border-radius: 50%;
-     vertical-align: top;
+     vertical-align: middle;
  }
+.account .logged_in .name{
+    margin-left: 5px;
+    font-size: 15px;
+}
+.account .logged_in .name:hover{
+    color: #1890ff;
+}
+.logout:hover{
+    color: red;
+}
 .btn.btn_green {
     background-color: #80c200;
     color: #fff;

@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import './header.css'
 import services from "../lib/services"
 import logo from '../images/logo.png'
-import avater from '../images/index_sliders_bg.jpg'
+import avater from '../images/image_3.jpg'
 import {connect} from 'react-redux'
 import {Modal, Button, Input, message} from 'antd';
-import {  Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+
 class Header extends Component {
     constructor(props) {
         super()
@@ -29,12 +30,41 @@ class Header extends Component {
             visible: false,
         });
     }
+
+    componentDidMount() {
+        let token = document.cookie.split("=")[1];
+        console.log(token)
+        if (token !== undefined) {
+            const data={
+                token:token
+            }
+            services.Questionnaire.GetUser(data).then(ret => {
+                if(ret.data.data.login){
+                    this.setState({
+                        username:ret.data.data.username,
+                        password: "",
+                        login: "block",
+                        not_login: "none"
+                    })
+                }
+                   else{
+                    message.error("用户身份已过期，请重新登录")
+                    this.props.history.push('/')
+                }
+
+                console.log(ret.data)
+            }).catch(ret => {
+                console.log(ret)
+            })
+
+        }
+    }
+
     handleLogin = (e) => {
         const data = {
             username: this.state.username,
             password: this.state.password
         };
-        console.log(data)
         services.Questionnaire.SignIn(data).then(ret => {
             let data = ret.data
             if (data.data.login === true) {
@@ -48,9 +78,13 @@ class Header extends Component {
                 })
                 this.handleCancel();
                 this.props.addToken(data.data.currentToken)
-
+                document.cookie = "token=" + data.data.currentToken;
             }
-            else message.error("用户名或密码错误");
+            else {
+                message.error("用户名或密码错误");
+            }
+
+
 
 
         }).catch(ret => {
@@ -59,11 +93,17 @@ class Header extends Component {
     }
     handleLogout = () => {
         this.props.addToken("")
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        let token = document.cookie.split("=")[1];
+        if(token!=null)
+            document.cookie= "token" + "="+token+";expires="+exp.toGMTString();
         this.setState({
             password: "",
             not_login: "block",
             login: "none"
         })
+        this.props.history.push('/')
     }
     setUserName = (e) => {
         this.setState({
@@ -93,14 +133,14 @@ class Header extends Component {
                     <div className="menu">
                         <ul>
                             <li><Link to="/">首页</Link></li>
-                            <li><Link to="/questionnaires">发现问卷 </Link ></li>
-                            <li><Link to="/" className="require_login">创建问卷</Link></li>
-                            <li><Link to="/" className="require_login">我的问卷</Link></li>
+                            <li><Link to="/questionnaires">发现问卷 </Link></li>
+                            <li><Link to="/create" className="require_login">创建问卷</Link></li>
+                            <li><Link to="/myQuestionnaires" className="require_login">我的问卷</Link></li>
                         </ul>
                     </div>
                     <div className="account">
                         <div id="login_checked" className="logged_in" style={{display: this.state.login}}>
-                            <img  alt="" className="avatar" src={avater}/>&nbsp;
+                            <img alt="" className="avatar" src={avater}/>&nbsp;
                             <span className="name">{this.state.username}</span>
                             <span className="splitor">&nbsp;|&nbsp;</span>
                             <a id="logout" className="logout" onClick={this.handleLogout}>退出</a>

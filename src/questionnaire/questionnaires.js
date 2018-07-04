@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import services from "../lib/services"
-import {  Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {connect} from 'react-redux'
+import {Radio} from "antd"
 import "./questionnaires.css"
+
+const RadioGroup = Radio.Group;
+const RadioButton = Radio.Button
 
 class QuestionnaireList extends Component {
     constructor(props) {
@@ -25,7 +29,6 @@ class QuestionnaireList extends Component {
             console.log(ret)
         })
         services.Questionnaire.GetQuestionnaire("").then(ret => {
-
             this.setState({
                 questionnaires: ret.data.data
             })
@@ -45,40 +48,42 @@ class QuestionnaireList extends Component {
     showQuestionnaire = (i) => {
         this.props.addQuestionnaireId(i)
     }
+
     render() {
         return (
-            <div className="show_content" >
+            <div className="show_content">
                 <div className="left">
                     <div>
                         分类
                     </div>
-                    {
-                        this.state.classification.map((item, i) => {
-                            return (
-                                <a key={i} className="classification"
-                                   onClick={() => this.getQuestionnaire(item.id)}>
-                                    {item.name}
-                                </a>
-                            )
-                        })
-                    }
+                    <RadioGroup defaultValue="">
+                        {
+                            this.state.classification.map((item, i) => {
+                                return (
+                                    <RadioButton className="classification" key={i} value={item.id}
+                                                 onClick={() => this.getQuestionnaire(item.id)}>{item.name}</RadioButton>
+                                )
+                            })
+                        }
+                    </RadioGroup>
                 </div>
                 <div className="questionnaireList">
                     {
                         this.state.questionnaires.map((item, i) => {
                             return (
                                 <div className="questionnaire" key={i}>
-                                    <div style={{marginBottom:"30px"}}>
-                                        <Link className="questionnaireTitle" to="/questionnaires/show"  onClick={() => this.showQuestionnaire(item.id)}>
+                                    <div style={{marginBottom: "30px"}}>
+                                        <Link className="questionnaireTitle" to="/questionnaires/show"
+                                              onClick={() => this.showQuestionnaire(item.id)}>
                                             <span className="questionnaireTitle">{item.title}  </span>
                                         </Link>
 
                                         <span className="questionNum">共{item.questionCount}个问题</span>
-                                        <div style={{fontSize:"16px"}}>简介：{item.description}</div>
+                                        <div style={{fontSize: "16px"}}>简介：{item.description}</div>
                                     </div>
 
                                     <div>
-                                        <span>作者：{item.creatorName }</span>
+                                        <span>作者：{item.creatorName}</span>
                                     </div>
                                 </div>
 
@@ -92,6 +97,13 @@ class QuestionnaireList extends Component {
     };
 }
 
+function mapStateToProps(state) {
+
+    return ({
+        id: state.questionnaire.id
+    })
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         addQuestionnaireId: (id) => {
@@ -103,4 +115,5 @@ function mapDispatchToProps(dispatch) {
         }
     }
 }
-export default connect(mapDispatchToProps)(QuestionnaireList);
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionnaireList);
