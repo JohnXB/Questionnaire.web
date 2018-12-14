@@ -69,7 +69,7 @@ class Header extends Component {
         services.Questionnaire.SignIn(data).then(ret => {
             let data = ret.data
             if (data.data.login === true) {
-                message.info('登录成功');
+                message.success('登录成功');
 
 
                 this.setState({

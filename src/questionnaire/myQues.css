@@ -1,0 +1,124 @@
+.my_content {
+    padding-top: 80px;
+    margin: auto;
+    min-height: 500px;
+    width: 100%;
+}
+
+.g_content {
+    max-width: inherit;
+    max-width: 1440px;
+    min-width: 1070px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0px 20px;
+}
+
+#create_survey {
+    vertical-align: middle;
+}
+
+.btn.btn_blue {
+    background-color: rgb(71, 157, 230);
+    color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(71, 157, 230);
+    border-image: initial;
+    margin-bottom: 10px;
+}
+
+.btn.btn_middle {
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 20px;
+    border-radius: 4px;
+}
+
+.list_table_head {
+    font-size: 14px;
+    position: relative;
+    background: rgb(250, 250, 250);
+    transition: width 0.15s, height 0.15s;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.title {
+    font-size: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: block;
+    margin-right: 660px;
+    padding-left: 20px;
+    padding-right: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.status_col {
+    display: inline-block;
+    width: 150px;
+    position: absolute;
+    right: 500px;
+    text-align: left;
+    top: 1px;
+    margin: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.more_operations {
+    top: 1px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+    display: inline-block;
+    zoom: 1;
+    width: 70px;
+    position: absolute;
+    right: 400px;
+}
+
+.recycle {
+    top: 1px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: right;
+    display: inline-block;
+    zoom: 1;
+    padding-right: 80px;
+    position: absolute;
+    right: 180px;
+}
+
+.create_time {
+    top: 1px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: left;
+    display: inline-block;
+    zoom: 1;
+    width: 140px;
+    padding-left: 40px;
+    position: absolute;
+    right: 0px;
+}
+.survey_list {
+      width: 100% !important;
+  }
+.survey_item {
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    line-height: 16px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    cursor: pointer;
+    transition: width 0.15s;
+}

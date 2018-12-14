@@ -41,16 +41,11 @@ export default class Service {
         static GetQuestionnaireById = (data, options = {}) => Service.businessService.get(`/Questionnaire/A03?id=${data}`);
         static Create = ( data,params = {}) => Service.businessService.post("/Questionnaire/A02", data, params);
         static FillIn = (data, params = {}) => Service.businessService.post("/Questionnaire/A07", data, params)
-        static Get = (id, params, options = {}) => Service.businessService.get(`/articles/${id}`, {
-            ...options,
-            params: params
-        });
+        static GetUserQues = (data, params = {}) => Service.businessService.post("/Questionnaire/A09", data, params)
+        static DeleteQues = (data, params = {}) => Service.businessService.post("/Questionnaire/A06", data, params)
+        static visibleClose = (data, params = {}) => Service.businessService.post("/Questionnaire/A04", data, params)
+        static visibleOpen = (data, params = {}) => Service.businessService.post("/Questionnaire/A10", data, params)
     };
 
-    static Categories = class {
-        static List = (params, options = {}) => Service.businessService.get("/categories", {
-            ...options,
-            params: params
-        });
-    }
+
 }
